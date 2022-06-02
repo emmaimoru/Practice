@@ -3,8 +3,7 @@ pipeline{
     stages{
         stage('1-emmanuel'){
             steps{
-                sh 'ps -ef'
-                sh 'sudo systemctl status jenkins'
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'ad', url: 'https://github.com/emmaimoru/Practice.git']]])
             }
         }stage('2-love'){
             steps{
