@@ -19,6 +19,11 @@ pipeline{
                  sh 'sudo systemctl status jenkins'
             }
         }
+        stage('4-security tools and risks'){
+            steps{
+                sh '/var/lib/jenkins/workspace/test group-level-ci/security.sh'
+            }
+        }
 
     }
 }
